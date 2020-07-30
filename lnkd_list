@@ -1,67 +1,67 @@
 import java.util.*;
 
-class lnkdlist_del
+class linkedlistdelete
 {   
     class Node
     {
-        int dt;
+        int a;
         Node next;
-        Node(int d)
+        Node(int c)
         
         {
-            dt=d;
+            a=c;
             next = null;
         }
     }
     
     Node head =null;
-    public void insert(int d)
+    public void insert(int c)
     {    
-        Node el =new Node(d);
+        Node b =new Node(c);
          if(head==null)
          {
-             head=el;
+             head=b;
          }
          else
          {
-             Node curr=head;
-             while(curr.next!=null)
+             Node current=head;
+             while(current.next!=null)
              {
-                 curr=curr.next;
+                 current=current.next;
              }
-             curr.next=el;
+             current.next=b;
          }
     }
     
     public void disp()
     {
-          Node curr =head;
-           System.out.println("elements after del:");
-           while(curr !=null)
+          Node current =head;
+           System.out.println("elements after deletion:");
+           while(current !=null)
            {
-               System.out.print(curr.data+ " ");
-               curr=curr.next;
+               System.out.print(current.data+ " ");
+               current=current.next;
            }
        
     }
-    public void delete(int del)
+    public void delete(int deletion)
     {    int flag=0;
         
-         Node curr=head;
+         Node current=head;
          
-         if(curr.dt==del)
+         if(current.a==deletion)
          {
-            head=curr.next;
+            head=current.next;
          }
          else{ 
-              Node prev;
-               while(curr.next!=null)
+              Node previous;
+               while(current.next!=null)
              {   
-                  prev =curr;
-                 curr=curr.next;
-                 if(curr.dt==del)
+                  previous =current;
+                 current=current.next;
+                 if(current.a==deletion)
                 {  
-                    prev.next=curr.next;
+                    previous.next=current.next;
                     flag=1;
                     break;
                 }
@@ -69,11 +69,11 @@ class lnkdlist_del
               
               if(flag==0)
               {
-                  System.out.println("not found!");
+                  System.out.println("notfound");
               }
               else
               { 
-                  disp();
+                  display();
               }
          }
     }
@@ -81,7 +81,7 @@ class lnkdlist_del
     {
         Scanner sc=new Scanner(System.in);
         
-        System.out.println("Enter size of linked list:");
+        System.out.println("Enter size of linked list:-");
         
         int n=sc.nextInt();
         
