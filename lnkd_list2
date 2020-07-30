@@ -1,47 +1,57 @@
 import java.util.*;
 
-class lnkdlist_findele
-{   class Node
+class linkedlistfinddelete
+{   
+class Node
+    
     {
-        int dt;
+        int ab;
         Node next;
-        Node(int d)
+        Node(int direct)
         {
-            dt=d;
+            ab=direct;
             next=null;
         }
     }
-    Node head;
-    public void insert(int d)
+   
+   
+   Node head;
+    public void insert(int direct)
+    
     {
-         Node ele=new Node(d);
+         Node element=new Node(direct);
          if(head==null)
          {
-           head=ele;
+           head=element;
          }
          else{
+         
             Node last =head;
             while(last.next!=null)
             {
                 last=last.next;
             }
-            last.next=ele;
-         }
+            last.next=element;
+        
+        }
     }
-    public void find(int k)
-    {   int flag=0;
-        Node curr=head;
+    public void find(int cc)
+    {  
+    int flag=0;
+        Node current=head;
         int i=1;
-        while(curr.next!=null)
+        while(current.next!=null)
         {
-            if(curr.dt==k)
+        
+            if(current.ab==cc)
             {   flag=1;
                 break;
             }
             i++;
-            curr=curr.next;
-        }
-        if(curr.dt==k)
+            current=current.next;
+       
+       }
+        if(current.ab==cc)
         flag=1;
         
         if(flag==1)
@@ -49,23 +59,24 @@ class lnkdlist_findele
             System.out.println("found at position: "+i);
         }
         else{
-            System.out.println("not found!!");
+            System.out.println("notfound");
         }
     }
     public static void main(String args[])
     {
+        
         Scanner sc=new Scanner(System.in);
         int n =sc.nextInt();
         linkedlist_findelement in =new linkedlist_findelement();
         for(int i=0;i<n;i++)
         {
-            int el =sc.nextInt();
-            in.insert(el);
+            int element =sc.nextInt();
+            in.insert(element);
         }
         
-        System.out.println("enter ele to find:");
-        int k=sc.nextInt();
-        in.find(k);
+        System.out.println("enter element to find:");
+        int cc=sc.nextInt();
+        in.find(cc);
         sc.close();
     }
 }
