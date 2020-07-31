@@ -1,45 +1,45 @@
 import java.util.*;
-class doublylinkedlist_beginsert
+class doublelinkedlistbegininsert
 {   
     class Node
     {
-        int data;
+        int dat;
         Node next;
         Node prev;
-        Node(int d)
+        Node(int c)
         {
-            data=d;
+            dat=c;
             next=null;
             prev=null;
         }
     }
     Node head;
-    public void beginsert(int d)
-    {   Node  el=new Node(d);
+    public void beginsert(int c)
+    {   Node  element=new Node(c);
         
         if(head==null)
         {
-            head=el;
-            el.prev=null;
+            head=element;
+            element.prev=null;
         }
         else{
-            el.next=head;
-            el.prev=null;
-            head=el;
+            element.next=head;
+            element.prev=null;
+            head=element;
         }
     }
-    public void disp()
+    public void display()
     {
-        Node curr =head;
-        if(curr==null)
+        Node current=head;
+        if(current==null)
         {
-            System.out.print("empty");
+            System.out.print(" it is empty");
         }
-        else{System.out.println("elements are:");
-            while(curr !=null)
+        else{System.out.println("elements ");
+            while(current !=null)
             {
-                System.out.print(curr.data+ " ");
-                curr=curr.next;
+                System.out.print(current.dat+ " ");
+                current=current.next;
             }
             System.out.println();
         }
@@ -48,11 +48,11 @@ class doublylinkedlist_beginsert
     {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        doublylinkedlist_beginsert on=new doublylinkedlist_beginsert();
+        doublelinkedlistbegininsert on=new doublelinkedlistbegininsert();
         for(int i=0;i<n;i++)
         {
-            int e=sc.nextInt();
-            on.beginsert(e);
+            int l=sc.nextInt();
+            on.beginsert(l);
         }
         sc.close();
         on.disp();
