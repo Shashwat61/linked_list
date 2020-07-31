@@ -1,77 +1,82 @@
 import java.util.*;
-class linkedlist_merge
+class linkedlistmerge
 {   class Node
     {
       Node next;
-      int data;
-      Node(int d)
+      int dat;
+      Node(int c)
       {
-        data=d;
-        next=null;
+       
+          dat=c;
+        
+          next=null;
       }
+    
     }
     Node head1;
     Node head2;
-    public void insert(int d)
+    public void insert(int c)
     { 
-      Node el =new Node(d);
+      Node element =new Node(c);
       if(head1==null)
-      head1=el;
+      head1=element;
       else{
-        Node curr=head1;
-        while(curr.next!=null)
+        Node current=head1;
+        while(current.next!=null)
         {
-          curr=curr.next;
+          current=current.next;
         }
-        curr.next=el;
+        current.next=element;
       }
     }
-    public void insert2(int d)
+    public void insert2(int c)
     { 
-      Node el =new Node(d);
+      Node element =new Node(c);
       if(head2==null)
-      head2=el;
+      head2=element;
       else{
-        Node curr=head2;
-        while(curr.next!=null)
+        Node current=head2;
+        while(current.next!=null)
         {
-          curr=curr.next;
+          current=current.next;
         }
-        curr.next=el;
+        current.next=element;
       }
     }
     public void merge()
     {
-      Node curr =head1;
-      while(curr.next!=null)
+      Node current =head1;
+      while(current.next!=null)
       {
-        curr=curr.next;
+        current=current.next;
       }
-      curr.next=head2;
+      current.next=head2;
     }
-    public void disp()
-    {   System.out.println("elements after merge:");
-        Node curr=head1;
-        while(curr.next!=null)
+    public void display()
+    {   
+        System.out.println("elements after merging:-");
+        Node current=head1;
+        while(current.next!=null)
         {
-            System.out.print(curr.data+" ");
-            curr=curr.next;
-        }System.out.println(curr.data);
+            System.out.print(current.data +" ");
+            current=current.next;
+        }
+        System.out.println(current.data);
     }
     public static void main(String args[])
     {
       Scanner sc=new Scanner(System.in);
-      linkedlist_merge in=new linkedlist_merge();
-      System.out.println("Enter size of first list:");
-      int n=sc.nextInt();
-      for(int i=0;i<n;i++)
+      linkedlistmerge in=new linkedlistmerge();
+      System.out.println("Enter the size of list1:-");
+      int m=sc.nextInt();
+      for(int i=0;i<m;i++)
       {
-        int el=sc.nextInt();
-        in.insert(el);
+        int element=sc.nextInt();
+        in.insert(element);
       }
-      System.out.println("Enter size of second list:");
+      System.out.println("Enter size of list2:");
       int n2=sc.nextInt();
-      for(int t=0;t<n2;t++)
+      for(int p=0;p<n2;p++)
       {
         int e=sc.nextInt();
         in.insert2(e);
